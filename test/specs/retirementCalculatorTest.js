@@ -1,7 +1,7 @@
-import RetirementCalculatorPage from '../pageobjects/retirementCalculator.page.js';
+import RetirementCalculatorPage from '../../pages/retirementCalculator.page.js';
 import { expect } from '@wdio/globals';
 import allure from '@wdio/allure-reporter';
-import retirementCalculatorPage from '../pageobjects/retirementCalculator.page.js';
+
 
 describe("Retirement Calculator Test",async()=>{
 
@@ -36,7 +36,7 @@ describe("Retirement Calculator Test",async()=>{
         await RetirementCalculatorPage.closeCookieBannerIfPresent();
         await RetirementCalculatorPage.fillBasicInfoWoRequiredFields();
         await RetirementCalculatorPage.calculateResults();
-        expect(await retirementCalculatorPage.getAlertFieldDisplayed({ timeout: 10000 })).toBe(true);
+        expect(await RetirementCalculatorPage.getAlertFieldDisplayed({ timeout: 10000 })).toBe(true);
 
     });
 

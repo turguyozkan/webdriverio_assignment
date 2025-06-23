@@ -1,6 +1,6 @@
 import { $, browser } from '@wdio/globals'
-import Page from './page.js';
-import testData from '../../data/testData.json' assert { type: "json" };
+import Page from '../pages/page.js';
+import testData from '../test/data/testData.json' assert { type: "json" };
 
 class RetirementCalculatorPage extends Page {
 
