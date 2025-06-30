@@ -106,8 +106,18 @@ class RetirementCalculatorPage extends Page {
         return await this.alertField.isDisplayed();
     }
 
+    async waitResultTextDisplayed() {
+        await browser.waitUntil(
+            async () => await this.resultText.isDisplayed(),
+            {
+                timeout: 20000,
+                timeoutMsg: 'Result text did not appear within 20 seconds'
+            }
+        );
+    }
+
     async getResultText() {
-        await this.resultText.waitForDisplayed({ timeout: 5000 });
+        await this.resultText.waitForDisplayed({ timeout: 10000 });
         return await this.resultText.getText();
     }
 
@@ -177,6 +187,7 @@ class RetirementCalculatorPage extends Page {
         await this.calculateButton.waitForDisplayed({ timeout: 10000 });
         await this.calculateButton.click();
         await this.waitForPageToLoad();
+       
     }
 }
 

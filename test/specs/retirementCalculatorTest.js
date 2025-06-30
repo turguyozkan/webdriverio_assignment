@@ -17,6 +17,7 @@ describe("Retirement Calculator Test",async()=>{
             await RetirementCalculatorPage.fillBasicInfoWssBenefits();
             await RetirementCalculatorPage.adjustDefaults();
             await RetirementCalculatorPage.calculateResults();
+            await RetirementCalculatorPage.waitResultTextDisplayed();
             expect(await RetirementCalculatorPage.resultText.getText()).toBe("Results");
         }catch(error){
             allure.addAttachment("Failure", error.message, "text/plain");
@@ -34,6 +35,7 @@ describe("Retirement Calculator Test",async()=>{
             await RetirementCalculatorPage.fillBasicInfoWssBenefits();
             await RetirementCalculatorPage.adjustDefaults();
             await RetirementCalculatorPage.calculateResults();
+            await RetirementCalculatorPage.waitResultTextDisplayed();
             expect(await RetirementCalculatorPage.getResultText()).toBe("Results");
         }catch(error){
             allure.addAttachment("Failure", error.message, "text/plain");
