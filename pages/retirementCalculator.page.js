@@ -165,7 +165,7 @@ class RetirementCalculatorPage extends Page {
         await this.retirementDuration.setValue(testData.retirementDuration);
         await this.includeInflation.scrollIntoView();
         await this.includeInflation.click();
-        await browser.pause(5000);
+        await this.retirementAnnualIncomePercentage.waitForEnabled({ timeout: 5000 });
         await this.retirementAnnualIncomePercentage.setValue(testData.retirementAnnualIncomePercentage);
         await this.preRetirementRoi.setValue(testData.preRetirementROI);
         await this.postRetirementRoi.setValue(testData.postRetirementROI);
